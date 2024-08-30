@@ -1,0 +1,22 @@
+{
+  "name": "kysely-repro",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "db": "docker run --name kysely-repro-postgres -d -p 5432:5434 -e POSTGRES_HOST_AUTH_METHOD=trust postgres",
+    "clean": "docker stop kysely-repro-postgres && docker rm kysely-repro-postgres",
+    "dev": "rm -rf dist && tsc && node dist"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "kysely": "^0.27.4",
+    "pg": "^8.12.0"
+  },
+  "devDependencies": {
+    "@types/pg": "^8.11.8",
+    "typescript": "^5.5.4"
+  }
+}
